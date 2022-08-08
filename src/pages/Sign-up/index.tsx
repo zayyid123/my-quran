@@ -1,8 +1,9 @@
 import React from 'react'
+import './style.scss'
 
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <div className='jdl'>SignUp</div>
   )
 }
 

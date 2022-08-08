@@ -1,11 +1,21 @@
 import React from 'react';
-import './App.css';
+import list from "../../config/route/listRoute";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <>
+      <Router>
+        <Routes >
+          {
+            list.map((item) =>
+              <Route key={item.name} path={item.path} element={<item.component />} />
+            )
+          }
+        </Routes>
+      </Router>
+
+    </>
   );
 }
 
