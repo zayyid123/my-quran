@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
+import './style.scss'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import MyButton from '../../components/myButton'
@@ -32,7 +33,7 @@ const SignIn = (props: any) => {
 
   return (
     <div className='container'>
-      <div className='signup'>
+      <div className='signin'>
         <h1>Sign In {props.popupProps}</h1>
         <p>Please enter your details.</p>
         <input type="email" placeholder='Email' onChange={changeEmail} />

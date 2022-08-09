@@ -37,6 +37,7 @@ export const signInUserApi = (data: any) => (dispatch: any) => {
                 dispatch({ type: 'CHANGE_ISLOADING', value: false })
                 dispatch({ type: 'CHANGE_ISLOGIN', value: true })
                 dispatch({ type: 'CHANGE_USER', value: dataUser })
+                localStorage.setItem('USER', JSON.stringify(dataUser))
                 resolve(true)
             })
             .catch((error) => {
