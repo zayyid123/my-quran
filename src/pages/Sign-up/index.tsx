@@ -3,6 +3,7 @@ import './style.scss'
 import fbConfig from "../../config/firebase/index";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from 'react-router-dom'
+import MyButton from '../../components/myButton';
 
 const SignUp = () => {
   const [email, setemail] = useState('')
@@ -40,9 +41,9 @@ const SignUp = () => {
         <p>Please enter your details.</p>
         <input type="email" placeholder='Email' onChange={changeEmail} />
         <input type="password" placeholder='Password' onChange={changePass} />
-        <button onClick={handleSubmit} >Submit</button>
+        <MyButton title={'Submit'} onClick={handleSubmit} loading={true} />
 
-        <p>Already have an account ? <Link to={'/sign-in'}><span>Login</span></Link></p>
+        <p>Already have an account ? <Link to={'/sign-in'}><span>Sign In</span></Link></p>
       </div>
     </div>
   )

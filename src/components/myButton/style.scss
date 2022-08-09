@@ -1,0 +1,27 @@
+$text-gelap : #161A42;
+
+.myButton {
+    background: linear-gradient(90deg, rgba(45, 195, 238, 1) 0%, rgba(37, 211, 207, 1) 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 400;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+            background: white;
+            color: $text-gelap;
+        }
+
+    &.disabled{
+        background: gray;
+        color: white;
+
+        &:hover{
+            cursor: not-allowed;
+        }
+    }
+}
