@@ -1,34 +1,26 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React,{useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import './style.scss'
 
-const Home = (props: any) => {
+const Home = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (localStorage.getItem('USER')) {
-      console.log(props.user)
-    } else {
-      console.log('login duls gan')
+    if (!localStorage.getItem('USER')) {
       navigate('/sign-in')
     }
   }, [])
-  
-  const handleLogOut = () => {
-    localStorage.removeItem('USER')
-    navigate('/sign-in')
-  }
 
   return (
     <div className='container'>
-      <h1>Home</h1>
-      <Link to={'/sign-up'}>
-        <button>Sign Up</button>
-      </Link>
-
-      <button onClick={handleLogOut}>Log Out</button>
+      <div className='homeDetail'>
+        <div>My Quran</div>
+        <div>~ Al - Quran Online ~</div>
+        <div>Read Al-Qur'an Online anywhere and anytime easily.</div>
+      </div>
     </div>
   )
 }

@@ -37,7 +37,7 @@ const SignIn = (props: any) => {
         <p>Please enter your details.</p>
         <input type="email" placeholder='Email' onChange={changeEmail} />
         <input type="password" placeholder='Password' onChange={changePass} />
-        <MyButton title={'Submit'} onClick={handleSubmit} loading={props.isLoading} />
+        <MyButton title={'Sign In'} onClick={handleSubmit} loading={props.isLoading} />
 
         <p>Dont have an account ? <Link to={'/sign-up'}><span>Sign Up</span></Link></p>
       </div>
