@@ -50,9 +50,6 @@ const Navbar = () => {
                     <Link to={'/'}>
                         <p>Home</p>
                     </Link>
-                    <Link to={'/quran'}>
-                        <p>Quran</p>
-                    </Link>
                     <Link to={'/profile'}>
                         <p>Profile</p>
                     </Link>
