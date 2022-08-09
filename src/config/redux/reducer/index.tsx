@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const initialStore = {
     popup: false,
-    isLogin: false
+    isLogin: false,
+    isLoading: false,
+    user: {}
 }
 
 const reducer = (state = initialStore, action: any) => {
@@ -16,6 +18,20 @@ const reducer = (state = initialStore, action: any) => {
         return {
             ...state,
             isLogin: action.value
+        }
+    }
+
+    if (action.type === 'CHANGE_ISLOADING') {
+        return {
+            ...state,
+            isLoading: action.value
+        }
+    }
+
+    if (action.type === 'CHANGE_USER') {
+        return {
+            ...state,
+            user: action.value
         }
     }
 
