@@ -12,15 +12,16 @@ $text-gelap : #161A42;
     text-align: center;
 
     &:hover {
-            background: white;
-            color: $text-gelap;
-        }
+        background: gray;
+        color: white !important;
+        color: $text-gelap;
+    }
 
-    &.disabled{
+    &.disabled {
         background: gray;
         color: white;
 
-        &:hover{
+        &:hover {
             cursor: not-allowed;
         }
     }

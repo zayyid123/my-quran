@@ -24,7 +24,6 @@ const SignIn = (props: any) => {
     const res = await props.signInApi({ email, password }).catch((err: any) => err)
 
     if (res) {
-      console.log('login succes')
       window.location.href = '/'
     } else {
       console.log('login failed')

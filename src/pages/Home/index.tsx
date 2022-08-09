@@ -22,7 +22,7 @@ const Home = (props: any) => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Home</h1>
       <Link to={'/sign-up'}>
         <button>Sign Up</button>

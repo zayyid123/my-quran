@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2'
 import fbConfig from "../../firebase";
 
 export const registerUserApi = (data: any) => (dispatch: any) => {
@@ -38,12 +39,27 @@ export const signInUserApi = (data: any) => (dispatch: any) => {
                 dispatch({ type: 'CHANGE_ISLOGIN', value: true })
                 dispatch({ type: 'CHANGE_USER', value: dataUser })
                 localStorage.setItem('USER', JSON.stringify(dataUser))
-                resolve(true)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Logged IN',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(() => {
+                    resolve(true)
+                }, 1200);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                alert(errorCode + ' ' + errorMessage)
+                console.log(error)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: errorCode, 
+                    text: errorMessage,
+                })
                 dispatch({ type: 'CHANGE_ISLOADING', value: false })
                 dispatch({ type: 'CHANGE_ISLOGIN', value: false })
                 reject(false)
