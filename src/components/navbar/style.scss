@@ -61,4 +61,97 @@
             }
         }
     }
+
+    .iconMenu {
+        display: none;
+    }
+
+    .menuAlternate {
+        display: none;
+        border-bottom-left-radius: 12px;
+        height: 500px;
+
+        .menuNavbarAlternate {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            p {
+                margin: 20px;
+                cursor: pointer;
+                color: white;
+            }
+        }
+
+        .btnhNavbarAlternate {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            div {
+                margin: 20px;
+                background-color: #EBEFF3;
+                padding: 10px;
+                border-radius: 12px;
+                color: gray;
+                cursor: pointer;
+                min-width: 60px;
+                text-align: center;
+
+                &:hover {
+                    background-color: #2FC6EA;
+                    color: white;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .btnhNavbar {
+        display: none !important;
+    }
+
+    .menuNavbar {
+        display: none !important;
+    }
+
+    .iconMenu {
+        display: block !important;
+        margin-right: 10px;
+        cursor: pointer;
+
+        img {
+            width: 45px;
+        }
+    }
+
+    .menuAlternate {
+        position: absolute;
+        background-color: gray;
+        width: 250px;
+        top: 63px;
+        right: -250px;
+        transition: 2s;
+    }
+
+    .menuAlternate.show {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 0 !important;
+        transition: 2s;
+    }
 }

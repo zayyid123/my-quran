@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import './style.scss'
 
+// icon
+import iconMenu from '../../assets/icon/menu.png'
+
 const Navbar = () => {
     const [isLogin, setisLogin] = useState(false)
 
@@ -35,6 +38,17 @@ const Navbar = () => {
                 })
             }
         })
+    }
+
+    const handleShowMenu = () => {
+        const myMenu: any = document.querySelector('.menuAlternate')
+
+        if (myMenu.className === 'menuAlternate show') {
+            myMenu.classList.remove('show')
+        } else {
+            myMenu.classList.add('show')
+        }
+
     }
 
     return (
@@ -70,6 +84,38 @@ const Navbar = () => {
                             </Link>
                         </div>
                 }
+
+                {/* menu alternate */}
+                <div className='menuAlternate'>
+                    <div className='menuNavbarAlternate'>
+                        <Link to={'/'} onClick={handleShowMenu}>
+                            <p>Home</p>
+                        </Link>
+                        <Link to={'/profile'} onClick={handleShowMenu}>
+                            <p>Profile</p>
+                        </Link>
+                    </div>
+
+                    {
+                        isLogin ?
+                            <div className='btnhNavbarAlternate' onClick={handleLogOut} >
+                                <div>Log Out</div>
+                            </div>
+                            :
+                            <div className='btnhNavbarAlternate'>
+                                <Link to={'/sign-up'} onClick={handleShowMenu}>
+                                    <div>Sign Up</div>
+                                </Link>
+                                <Link to={'/sign-in'} onClick={handleShowMenu}>
+                                    <div>Sign In</div>
+                                </Link>
+                            </div>
+                    }
+                </div>
+
+                <div className='iconMenu' onClick={handleShowMenu}>
+                    <img src={iconMenu} alt="icon menu" />
+                </div>
             </div>
         </div>
     )

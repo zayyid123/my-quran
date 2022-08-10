@@ -44,3 +44,16 @@
         font-family: "litelpmq";
     }
 }
+
+@media only screen and (max-width: 340px) {
+    .linkSurah {
+        width: 80% !important;
+    }
+
+    .cardSurah {
+        min-width: 0;
+        margin: auto;
+        margin-bottom: 10px;
+        width: 90% !important;
+    }
+}
