@@ -1,0 +1,26 @@
+.myProfile {
+    background-color: white;
+    border-radius: 12px;
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    margin: auto;
+    margin-top: 40px;
+
+    img {
+        width: 100px;
+        margin: 20px;
+        background-color: gray;
+        border-radius: 50%;
+    }
+
+    div {
+        span {
+            font-weight: bold;
+        }
+    }
+}

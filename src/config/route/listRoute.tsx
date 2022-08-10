@@ -2,6 +2,7 @@ import Home from "../../pages/Home";
 import Profile from "../../pages/Profile";
 import SignIn from "../../pages/Sign-in";
 import SignUp from "../../pages/Sign-up";
+import Surah from "../../pages/Surah";
 
 
 const list = [
@@ -24,6 +25,11 @@ const list = [
         path: "/profile",
         name: "PROFILE",
         component: Profile,
+    },
+    {
+        path: "/surah",
+        name: "SURAH",
+        component: Surah,
     },
 ];
 

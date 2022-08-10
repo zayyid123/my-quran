@@ -3,12 +3,13 @@ const initialStore = {
     popup: false,
     isLogin: false,
     isLoading: false,
-    user: {}
+    user: {},
+    surah: '',
 }
 
 const reducer = (state = initialStore, action: any) => {
     if (action.type === 'CHANGE_POPUP') {
-        return{
+        return {
             ...state,
             popup: action.value
         }
@@ -32,6 +33,13 @@ const reducer = (state = initialStore, action: any) => {
         return {
             ...state,
             user: action.value
+        }
+    }
+
+    if (action.type === 'CHANGE_SURAH') {
+        return {
+            ...state,
+            surah: action.value
         }
     }
 

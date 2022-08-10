@@ -39,6 +39,8 @@ export const signInUserApi = (data: any) => (dispatch: any) => {
                 dispatch({ type: 'CHANGE_ISLOGIN', value: true })
                 dispatch({ type: 'CHANGE_USER', value: dataUser })
                 localStorage.setItem('USER', JSON.stringify(dataUser))
+                localStorage.setItem('EMAIL', JSON.stringify(dataUser.email))
+                localStorage.setItem('UID', JSON.stringify(dataUser.uid))
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -57,7 +59,7 @@ export const signInUserApi = (data: any) => (dispatch: any) => {
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: errorCode, 
+                    title: errorCode,
                     text: errorMessage,
                 })
                 dispatch({ type: 'CHANGE_ISLOADING', value: false })

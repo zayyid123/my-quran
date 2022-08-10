@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'litelpmq';
+    src: url('../../assets/font/litelpmq.woff2');
+}
+
+.linkSurah {
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+.cardSurah {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 350px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #2C2C2C;
+        color: white;
+        transition: .5s;
+    }
+
+    .innerCard {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .ayatSurah {
+        margin-right: 20px;
+    }
+
+    .nameSurah {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .arabText {
+        font-family: "litelpmq";
+    }
+}

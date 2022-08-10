@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'litelpmq';
+    src: url('../../assets/font/litelpmq.woff2');
+}
+
+.cardAyat {
+    background-color: white;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ayatSurah {
+        width: 40%;
+    }
+
+    .arabSurah {
+        width: 40%;
+
+        .arabInner1 {
+            font-family: 'litelpmq';
+            margin-bottom: 10px;
+        }
+
+        .arabInner2 {
+            font-size: small;
+        }
+    }
+}
