@@ -23,3 +23,4 @@ setelah usai lalu ketikkan pada terminal npm start
 
 ## `atau anda bisa mencobanya langsung di sini`
 
+https://my-quran-six.vercel.app/
