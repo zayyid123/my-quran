@@ -25,7 +25,12 @@ export const registerUserApi = (data: any) => (dispatch: any) => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                alert(errorCode + ' ' + errorMessage)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: errorCode,
+                    text: errorMessage,
+                })
                 dispatch({ type: 'CHANGE_ISLOADING', value: false })
                 reject(false)
             })
@@ -63,7 +68,6 @@ export const signInUserApi = (data: any) => (dispatch: any) => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(error)
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
