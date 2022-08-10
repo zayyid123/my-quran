@@ -10,9 +10,17 @@ export const registerUserApi = (data: any) => (dispatch: any) => {
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                alert(user)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Sign Up',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
                 dispatch({ type: 'CHANGE_ISLOADING', value: false })
-                resolve(true)
+                setTimeout(() => {
+                    resolve(true)
+                }, 1200);
             })
             .catch((error) => {
                 const errorCode = error.code;
